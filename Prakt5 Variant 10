@@ -1,0 +1,93 @@
+using System;
+
+namespace CityList
+{
+    class Program
+    {
+        enum City
+        {
+            Ukraine_Kyiv = 1,
+            Ukraine_Lviv,
+            Ukraine_Odessa,
+            Ukraine_Kharkiv,
+            Spain_Madrid,
+            Spain_Barcelona,
+            Spain_Valencia,
+            Italy_Rome,
+            Italy_Milan,
+            Italy_Venice
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Author: CodePal\n");
+
+            Console.WriteLine("List of cities:\n");
+
+            Console.WriteLine("Ukraine:");
+            Console.WriteLine($"{(int)City.Ukraine_Kyiv}: Kyiv");
+            Console.WriteLine($"{(int)City.Ukraine_Lviv}: Lviv");
+            Console.WriteLine($"{(int)City.Ukraine_Odessa}: Odessa");
+            Console.WriteLine($"{(int)City.Ukraine_Kharkiv}: Kharkiv");
+
+            Console.WriteLine("\nSpain:");
+            Console.WriteLine($"{(int)City.Spain_Madrid}: Madrid");
+            Console.WriteLine($"{(int)City.Spain_Barcelona}: Barcelona");
+            Console.WriteLine($"{(int)City.Spain_Valencia}: Valencia");
+
+            Console.WriteLine("\nItaly:");
+            Console.WriteLine($"{(int)City.Italy_Rome}: Rome");
+            Console.WriteLine($"{(int)City.Italy_Milan}: Milan");
+            Console.WriteLine($"{(int)City.Italy_Venice}: Venice");
+
+            Console.WriteLine("\nEnter the numbers of the cities you would like to visit, separated by commas:");
+            string input = Console.ReadLine();
+
+            string[] selectedCities = input.Split(',');
+
+            Console.WriteLine("\nSelected cities:");
+
+            foreach (string city in selectedCities)
+            {
+                switch (city)
+                {
+                    case "1":
+                        Console.WriteLine("Kyiv");
+                        break;
+                    case "2":
+                        Console.WriteLine("Lviv");
+                        break;
+                    case "3":
+                        Console.WriteLine("Odessa");
+                        break;
+                    case "4":
+                        Console.WriteLine("Kharkiv");
+                        break;
+                    case "5":
+                        Console.WriteLine("Madrid");
+                        break;
+                    case "6":
+                        Console.WriteLine("Barcelona");
+                        break;
+                    case "7":
+                        Console.WriteLine("Valencia");
+                        break;
+                    case "8":
+                        Console.WriteLine("Rome");
+                        break;
+                    case "9":
+                        Console.WriteLine("Milan");
+                        break;
+                    case "10":
+                        Console.WriteLine("Venice");
+                        break;
+                    default:
+                        Console.WriteLine($"Invalid city number: {city}");
+                        break;
+                }
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
